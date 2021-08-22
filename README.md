@@ -34,6 +34,38 @@ Firmware replacement for STC15F mcu-based DIY Clock Kit (available from banggood
 * DIY LED Clock kit, based on STC15F204EA and DS1302, e.g. [Banggood SKU 972289](http://www.banggood.com/DIY-4-Digit-LED-Electronic-Clock-Kit-Temperature-Light-Control-Version-p-972289.html?p=WX0407753399201409DA)
 * connected to PC via cheap USB-UART adapter, e.g. CP2102, CH340G. [Banggood: CP2102 USB-UART adapter](http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=WX0407753399201409DA)
 
+There are different modifications of the hardware. Firmware can be built for the following hardware schemes:
+
+a.
+![](docs/DIY_LED_Clock_Schema_A.png)
+
+In the header file ".\src\hwconfig.h", comment out the definitions: **HW_MODEL_C** and **HW_MODEL_D**, you should get the following:
+
+```
+// #define HW_MODEL_C
+// #define HW_MODEL_D
+```
+
+b.
+![](docs/DIY_LED_Clock_Schema_C.jpg)
+
+In the header file ".\src\hwconfig.h", uncomment out the definition **HW_MODEL_C**, you should get the following:
+
+```
+#define HW_MODEL_C
+// #define HW_MODEL_D
+```
+
+d.
+![](docs/DIY_LED_Clock_Schema_D.jpg)
+
+In the header file ".\src\hwconfig.h", uncomment out the definition **HW_MODEL_D**, you should get the following:
+
+```
+// #define HW_MODEL_C
+#define HW_MODEL_D
+```
+
 ## connection
 | P1 header | UART adapter |
 |-----------|--------------|
@@ -124,7 +156,7 @@ http://www.qsl.net/v/ve3lny/travel_clock.html
 ### original operation
 [original firmware operation flow state diagram](docs/DIY_LED_Clock_operation_original.png)
 
-### schematics
+### Basic schematics
 Kit instructions w/ schematic: [scan](docs/DIY_LED_Clock.png) | [PDF](http://img.banggood.com/file/products/20170116024635SKU203096.pdf)
 
 
