@@ -67,12 +67,15 @@ In the header file ".\src\hwconfig.h", uncomment out the definition **HW_MODEL_D
 ```
 
 ## connection
-| P1 header | UART adapter |
-|-----------|--------------|
-| P3.1      | RXD          |
-| P3.0      | TXD          |
-| GND       | GND          |
-| 5V        | 5V           |
+|   P1 header   | UART adapter |
+|:--------------|:-------------|
+| P3.1(MCU_TxD) | UART_RxD     |
+| P3.0(MCU_RxD) | UART_TxD     |
+| GND           | GND          |
+| 5V            | 5V           |
+
+Please see example of UART adapter (FTDI232BL) connection to MCU  
+![](docs/FTDI232BLtoMCU.jpg)
 
 ## requirements
 * linux or mac (windows untested, but should work)
@@ -113,8 +116,18 @@ https://github.com/zerog2k/stc_diyclock/releases
 Instead of stcgal, you could alternatively use the official stc-isp tool, e.g stc-isp-15xx-v6.85I.exe, to flash.
 A windows app, but also works fine for me under mac and linux with wine.
 
+You can download the STC-ISP v6.88E (2021-04-26) programming software from [here](https://1drv.ms/u/s!ApCcDr7Mqk6whRResLwsi1LjsYMr?e=uqa1ZT).
 
-~**note** due to optimizations that make use of "eeprom" section for holding lookup tables, if you are using 4k flash model mcu AND if using stc-isp tool, you must flash main.hex (as code file) and eeprom.hex (as eeprom file). (Ignore stc-isp warning about exceeding space when loading code file.)~ (not really needed anymore as current build is within 4k code)
+An example of flashing the MCU via the [STC-ISP v6.88E](https://1drv.ms/u/s!ApCcDr7Mqk6whRResLwsi1LjsYMr?e=uqa1ZT) software please see  
+![](docs/flash_MCU.jpg)
+
+Run the STC-ISP software by clicking the exe file. Windows will ask permission to run the file so say yes. The program pops up a garbled message about eeprom so just click OK and it will run. Select your COM port, the STC15F204EA MCU, and a 11.059200 MHz clock speed. Use the Open Code File button to load your code and data. Then click the Download Program button. Now turn the power off and back on for the MCU by opening and closing the switch in the positive line connection between the MCU and the UART adapter. The download process should start and finish pretty quickly.
+
+After successful flashing in the [report of flash STC15F204EA](docs/report_of_flash_MCU.txt) - "Complete!"
+
+**NOTE**: There is no way to read the original firmware that's in the chip so you can't revert back to it. If you want to keep the original operation of the MCU, you should put the original chip aside and buy new blank chips for experimenting.
+
+~**Note** due to optimizations that make use of "eeprom" section for holding lookup tables, if you are using 4k flash model mcu AND if using stc-isp tool, you must flash main.hex (as code file) and eeprom.hex (as eeprom file). (Ignore stc-isp warning about exceeding space when loading code file.)~ (not really needed anymore as current build is within 4k code)
 To generate eeprom.hex, run:
 ```
 make eeprom
@@ -156,7 +169,7 @@ http://www.qsl.net/v/ve3lny/travel_clock.html
 ### original operation
 [original firmware operation flow state diagram](docs/DIY_LED_Clock_operation_original.png)
 
-### Basic schematics
+### basic schematics
 Kit instructions w/ schematic: [scan](docs/DIY_LED_Clock.png) | [PDF](http://img.banggood.com/file/products/20170116024635SKU203096.pdf)
 
 

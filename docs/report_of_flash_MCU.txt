@@ -1,0 +1,53 @@
+Checking target MCU ... 
+  MCU type: STC15F204EA
+  F/W version: 6.7R
+
+Current H/W Option:
+  . Do not detect the level of P3.2 and P3.3 next download
+  . Power-on reset, use the general power-on delay
+  . RESET pin behaves as IO pin
+  . Interrupt while detect a Low-Voltage
+  . Thresh voltage level of the built-in LVD : 3.61 V
+  . Permit EEPROM operation under Low-Voltag
+  . Hardware do not enable Watch-Dog-Timer
+  . Watch-Dog-Timer pre-scalar : 64
+  . Watch-Dog-Timer stop count in idle mode
+  . Program can modify the Watch-Dog-Timer scalar
+  . Do not erase user EEPROM area at next download
+
+  MCU type: STC15F204EA
+  F/W version: 6.7R
+
+Adjusting frequency ...			[1.375"]
+Adjusted frequency: 11.049MHz (-0.088%)
+
+Re-handshaking ... Successful			[0.437"]
+Current Baudrate: 57600
+Erasing MCU flash ...  OK !		[0.625"]
+MCU ID : F394C4B105A98D
+Programming user code ... OK !		[2.828"]
+Programming OPTIONS ... OK !		[0.047"]
+
+H/W Option upgrade to:
+  . Do not detect the level of P3.2 and P3.3 next download
+  . Power-on reset, use the general power-on delay
+  . RESET pin behaves as IO pin
+  . Reset while detect a Low-Voltage
+  . Thresh voltage level of the built-in LVD : 3.82 V
+  . Inhibit EEPROM operation under Low-Voltage  
+  . Hardware do not enable Watch-Dog-Timer
+  . Watch-Dog-Timer pre-scalar : 256
+  . Watch-Dog-Timer stop count in idle mode
+  . Program can modify the Watch-Dog-Timer scalar
+  . Do not erase user EEPROM area at next download
+MCU ID : F394C4B105A98D
+
+  MCU type: STC15F204EA
+  F/W version: 6.7R
+
+  . Set frequency: 11.059MHz
+  . Adjusted frequency: 11.049MHz
+  . Trim error: -0.088%
+
+
+  Complete !(2021-08-22 22:16:21)
