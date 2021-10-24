@@ -18,7 +18,6 @@ env.Append(
     "-DSHOW_TEMP_DATE_WEEKDAY"
     ],
     LINKFLAGS = [
-        "--xram-size", 0
         "--data-loc", 0x30
     ],
     STCGALCMD="/stcgal.py"
