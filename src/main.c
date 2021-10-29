@@ -1100,13 +1100,17 @@ int main()
             case M_WEEKDAY_DISP:
 	      {
 	      uint8_t wd;
- 
-	      wd = rtc_table[DS_ADDR_WEEKDAY]-1;
-
+#ifdef SHOW_DIGIT_WEEKDAY
+	      wd = rtc_table[DS_ADDR_WEEKDAY];
+          filldisplay(1, LED_DASH, 0);
+	      filldisplay(2, wd, 0);
+	      filldisplay(3, LED_DASH, 0);
+#else
+          wd = rtc_table[DS_ADDR_WEEKDAY]-1;
 	      filldisplay(1, weekDay[wd][0]-'A'+LED_a, 0);
 	      filldisplay(2, weekDay[wd][1]-'A'+LED_a, 0);
 	      filldisplay(3, weekDay[wd][2]-'A'+LED_a, 0);
-	      
+#endif	      
 	      dot3display(0);
 	      }
 	      break;

@@ -15,7 +15,8 @@ env.Append(
     "--disable-warning", 59,
     "-DWITH_ALT_LED9",
     "-DWITHOUT_LEDTABLE_RELOC",
-    "-DSHOW_TEMP_DATE_WEEKDAY"
+    "-DSHOW_TEMP_DATE_WEEKDAY",
+    "-DSHOW_DIGIT_WEEKDAY"
     ],
     LINKFLAGS = [
         "--data-loc", 0x30

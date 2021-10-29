@@ -12,7 +12,7 @@
 */
 
 // #define HW_MODEL_C
-#define HW_MODEL_D
+// #define HW_MODEL_D
 
 
 #if defined HW_MODEL_D
