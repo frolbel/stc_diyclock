@@ -9,7 +9,9 @@ Firmware replacement for STC15F mcu-based DIY Clock Kit (available from banggood
 ## features
 * time display/set (12/24 hour modes)
 * date display/set (with reversible MM/YY, YY/MM display)
-* day of week
+* day of week (mnemo and digital show of the week day is possible)
+If the -DSHOW_DIGIT_WEEKDAY parameter is defined when building the firmware, the weekday will be digitally displayed, please see  
+![](docs/SHOW_DIGIT_WEEKDAY.jpg)
 * year
 * seconds display/reset
 * display auto-dim
